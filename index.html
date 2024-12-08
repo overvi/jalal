@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Yekan";
+        src: url("./yekan/YekanBakhFaNum-Regular.woff2");
+      }
+
+      .day-item {
+        font-family: "Yekan";
+      }
+
+      body {
+        font-family: "Yekan";
+      }
+
+      input {
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/node_modules/litepicker/dist/bundle.js"></script>
+    <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
+
+    <input type="text" id="litepicker" />
+    <script src="./index.js"></script>
+    <script src="/node_modules/persian-date/dist/persian-date.js"></script>
+  </body>
+</html>

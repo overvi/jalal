@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "jalali-moment": "^3.3.11",
+    "litepicker": "^2.0.12",
+    "luxon": "^3.5.0"
+  },
+  "devDependencies": {
+    "persian-date": "^1.1.0"
+  }
+}
