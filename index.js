@@ -1,3 +1,5 @@
+moment.locale("en", { useGregorianParser: true });
+
 const weekDays = ["ش", "ی", "د", "س", "چ", "پ", "ج"];
 const reverse = weekDays.reverse();
 
@@ -20,18 +22,10 @@ const picker = new Litepicker({
 
       year.style.fontFamily = "Yekan";
 
-      console.log(year.textContent);
       year.textContent = moment(
         String(Number(year.textContent) + 1),
         "YYYY/MM/DD"
       ).jYear();
-    });
-
-    picker.on("selected", (date) => {
-      // Convert selected Gregorian date to Jalali
-      const jalaliDate = moment(date).format("jYYYY/jMM/jDD");
-      // Display Jalali date in input field
-      document.getElementById("litepicker").value = jalaliDate;
     });
   },
 
@@ -41,18 +35,11 @@ const picker = new Litepicker({
   // Disable the conversion (we will handle it ourselves)
   format: {
     parse(date) {
-      // Parse the date manually as Jalali if it's in string format
-      if (typeof date === "string") {
-        // Use moment to parse the date and set a default day (e.g., '01')
-        return moment(date, "jYYYY/jMM/jDD").date(1).toDate(); // Defaults the day to 1
-      }
-      return date;
+      return moment(date, "en", "YYYY/MM/DD").toDate();
     },
 
     output(date) {
-      // Convert date back to Jalali format when outputting
-      // Format as "jYYYY/jMM/DD" with the default day (e.g., "1402/09/01")
-      return moment(date).format("jYYYY/jMM/DD"); // Use the default day in the output
+      return moment(date).format("YYYY/MM/DD");
     },
   },
 });
