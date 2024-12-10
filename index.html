@@ -2,36 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url(./pick/css/pikaday.css);
+      * {
+        font-family: "Yekan";
+      }
       @font-face {
         font-family: "Yekan";
-        src: url("./yekan/YekanBakhFaNum-Regular.woff2");
+        src: url(./yekan/YekanBakhFaNum-Regular.woff2);
       }
-
-      .day-item {
-        font-family: "Yekan";
-      }
-
       body {
         font-family: "Yekan";
       }
-
-      .container__days {
-        direction: rtl;
-      }
-
       input {
-        font: inherit;
+        font: inherit !important;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"
+    ></script>
+
+    <script src="https://unpkg.com/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+    <script src="https://unpkg.com/persian-date@1.1.0/dist/persian-date.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./pick/pikaday.js"></script>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
-    <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
-
-    <input type="text" id="litepicker" />
-    <script src="./index.js"></script>
+    <input data-jdp />
+    <input id="flat" />
+    <input type="text" id="pick" />
+    <input type="text" id="b" />
   </body>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fa.js"></script>
+  <script type="module" src="./index.js"></script>
 </html>
